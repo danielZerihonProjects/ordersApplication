@@ -1,0 +1,12 @@
+---
+apiVersion: v2
+name: node-app
+description: this is a node application :)
+
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+kubeVersion: ">=1.16-0"
+maintainers:
+  - name: Danielzerihon
+    email: daniel92023@gmail.com

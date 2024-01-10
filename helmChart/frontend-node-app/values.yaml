@@ -1,0 +1,32 @@
+---
+replicaCount: 1
+image:
+  frontend:
+    repository: danielzerihon/nodejs_frontend
+    tag: latest  
+pullPolicy: IfNotPresent
+serviceAccount:
+  create: true
+  name: "nodejs"
+service:
+  type: ClusterIP
+  port:
+    backend: 3000
+    frontend: 5000
+mongodb:
+  connectionStringSecret: "example-mongodb-admin-my-user"
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    #  kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: nice-assignment.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: nice-assignment-tls
+  #    hosts:
+  #      - nice-assignment.local
