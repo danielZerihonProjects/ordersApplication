@@ -14,7 +14,7 @@ service:
     backend: 3000
     frontend: 5000
 mongodb:
-  connectionStringSecret: "example-mongodb-admin-my-user"
+  connectionStringSecret: "mongodb-node-app"
 ingress:
   enabled: true
   className: ""
